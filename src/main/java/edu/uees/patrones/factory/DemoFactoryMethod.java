@@ -21,5 +21,11 @@ public class DemoFactoryMethod {
             "0999999999",
             "Su tutoría fue confirmada."
         );
+
+        CreadorNotificador creadorPush = new CreadorPush();
+        creadorPush.notificar(
+        "estudiante@correo.com",
+        "Tiene una nueva actualización sobre su tutoría."
+        );
     }
 }
