@@ -1,0 +1,87 @@
+@startuml
+title Builder - Sistema de Gestión de Tutorías
+
+enum EstadoReserva {
+    PENDIENTE
+    CONFIRMADA
+    CANCELADA
+    REALIZADA
+}
+
+class Reserva {
+    - estudiante : String
+    - asignatura : String
+    - fecha : String
+    - hora : String
+    - docente : String
+    - modalidad : String
+    - tema : String
+    - observaciones : String
+    - estado : EstadoReserva
+
+    ~ Reserva(estudiante : String,
+              asignatura : String,
+              fecha : String,
+              hora : String,
+              docente : String,
+              modalidad : String,
+              tema : String,
+              observaciones : String,
+              estado : EstadoReserva)
+
+    + getEstado() : EstadoReserva
+    + getEstudiante() : String
+    + getAsignatura() : String
+    + getFecha() : String
+    + getHora() : String
+    + getDocente() : String
+    + getModalidad() : String
+    + getTema() : String
+    + getObservaciones() : String
+    + toString() : String
+}
+
+class ReservaBuilder {
+    - estudiante : String
+    - asignatura : String
+    - fecha : String
+    - hora : String
+    - docente : String
+    - modalidad : String
+    - tema : String
+    - observaciones : String
+    - estado : EstadoReserva
+
+    + estudiante(estudiante : String) : ReservaBuilder
+    + asignatura(asignatura : String) : ReservaBuilder
+    + fecha(fecha : String) : ReservaBuilder
+    + hora(hora : String) : ReservaBuilder
+    + docente(docente : String) : ReservaBuilder
+    + modalidad(modalidad : String) : ReservaBuilder
+    + tema(tema : String) : ReservaBuilder
+    + observaciones(observaciones : String) : ReservaBuilder
+    + estado(estado : EstadoReserva) : ReservaBuilder
+    + build() : Reserva
+    - validarObligatorios() : void
+}
+
+class DemoBuilder {
+    + main(args : String[]) : void
+}
+
+Reserva --> EstadoReserva : tiene estado
+ReservaBuilder --> EstadoReserva : configura
+ReservaBuilder ..> Reserva : construye
+DemoBuilder ..> ReservaBuilder : utiliza
+DemoBuilder ..> Reserva : obtiene
+
+note right of ReservaBuilder
+Builder permite construir una Reserva
+paso a paso, diferenciando campos
+obligatorios y opcionales.
+
+build() valida los datos obligatorios
+antes de crear el objeto.
+end note
+
+@enduml
