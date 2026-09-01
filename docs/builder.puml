@@ -52,15 +52,15 @@ class ReservaBuilder {
     - observaciones : String
     - estado : EstadoReserva
 
-    + estudiante(estudiante : String) : ReservaBuilder
-    + asignatura(asignatura : String) : ReservaBuilder
-    + fecha(fecha : String) : ReservaBuilder
-    + hora(hora : String) : ReservaBuilder
-    + docente(docente : String) : ReservaBuilder
-    + modalidad(modalidad : String) : ReservaBuilder
-    + tema(tema : String) : ReservaBuilder
-    + observaciones(observaciones : String) : ReservaBuilder
-    + estado(estado : EstadoReserva) : ReservaBuilder
+    + conEstudiante(estudiante : String) : ReservaBuilder
+    + conAsignatura(asignatura : String) : ReservaBuilder
+    + conFecha(fecha : String) : ReservaBuilder
+    + conHora(hora : String) : ReservaBuilder
+    + conDocente(docente : String) : ReservaBuilder
+    + conModalidad(modalidad : String) : ReservaBuilder
+    + conTema(tema : String) : ReservaBuilder
+    + conObservaciones(observaciones : String) : ReservaBuilder
+    + conEstado(estado : EstadoReserva) : ReservaBuilder
     + build() : Reserva
     - validarObligatorios() : void
 }

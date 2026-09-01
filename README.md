@@ -112,14 +112,14 @@ Ejemplo:
 
 ```java
 Reserva reserva = new ReservaBuilder()
-        .estudiante("Carlos Mendoza")
-        .asignatura("Diseño de Software")
-        .fecha("05/09/2026")
-        .hora("18:00")
-        .docente("Ing. Pérez")
-        .modalidad("Presencial")
-        .tema("Patrones de Diseño")
-        .estado(EstadoReserva.PENDIENTE)
+        .conEstudiante("Carlos Mendoza")
+        .conAsignatura("Diseño de Software")
+        .conFecha("05/09/2026")
+        .conHora("18:00")
+        .conDocente("Ing. Pérez")
+        .conModalidad("Presencial")
+        .conTema("Patrones de Diseño")
+        .conEstado(EstadoReserva.PENDIENTE)
         .build();
 ```
 
